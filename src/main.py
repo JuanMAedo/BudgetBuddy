@@ -3,11 +3,12 @@ import os
 from ctypes import alignment
 
 from dotenv import load_dotenv
-from functionalities import *
-from functionalities.border_styles import *
 from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import column_index_from_string
+
+from utils.excel_styles import thick_border, thin_border
+from utils.functionalities import day_to_name, month_to_name
 
 # SECRETS LOADINGS AT VARIABLES
 load_dotenv()
