@@ -1,14 +1,13 @@
-from ctypes import alignment
 import datetime
 import os
-from openpyxl import Workbook, load_workbook
-from openpyxl.utils import column_index_from_string
-from openpyxl.styles import Alignment, PatternFill, Font
+from ctypes import alignment
+
+from dotenv import load_dotenv
 from functionalities import *
 from functionalities.border_styles import *
-from dotenv import load_dotenv
-
-
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.utils import column_index_from_string
 
 #SECRETS LOADINGS AT VARIABLES
 load_dotenv()
