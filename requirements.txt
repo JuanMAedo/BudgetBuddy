@@ -1,0 +1,4 @@
+# Code Dependencies
+black
+isort
+-e .
