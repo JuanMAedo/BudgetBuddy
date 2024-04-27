@@ -1,4 +1,5 @@
 # Code Dependencies
+openpyxl
 pre-commit
 black
 isort
