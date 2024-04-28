@@ -26,8 +26,8 @@ def generate_excel_report(expense_income_read):
         for month_number, month_name in month_to_name.items():
             month_sheet = inc_exp_excel.create_sheet(month_name)
             inc_exp_excel.active = month_sheet
-            create_monthly_column_sheets(month_sheet, "INCOME", "B10", "Week", "24D124", "D78740")
-            create_monthly_column_sheets(month_sheet, "EXPENSE", "B2", "Week", "C06FCA", "D78740")
+            create_monthly_column_sheets(month_sheet, "INCOME", "B10","I15", "Week", "24D124", "D78740")
+            create_monthly_column_sheets(month_sheet, "EXPENSE", "B2","I7", "Week", "C06FCA", "D78740")
         inc_exp_excel.remove(inc_exp_excel["Sheet"])
 
     inc_exp_excel.save(file_name)

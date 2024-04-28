@@ -6,7 +6,7 @@ from utils.functionalities import day_to_name
 
 
 def create_monthly_column_sheets(
-    month_sheet, title, init_column, text_column, color_title, color_column
+    month_sheet, title, init_column, last_column, text_column, color_title, color_column
 ):
     # PARSER INIT_COLUMN TO ITERATIONS
     column_letter = init_column[0]
@@ -15,12 +15,12 @@ def create_monthly_column_sheets(
 
     # VERTICAL AXIS
     month_sheet[init_column] = f"{title}"
-    cell_B2 = month_sheet[init_column]
-    cell_B2.alignment = Alignment(horizontal="center")
-    cell_B2.fill = PatternFill(
+    cell_b2 = month_sheet[init_column]
+    cell_b2.alignment = Alignment(horizontal="center")
+    cell_b2.fill = PatternFill(
         start_color=color_title, end_color=color_title, fill_type="solid"
     )  # Color morado claro
-    cell_B2.font = Font(bold=True, name="Calibri")
+    cell_b2.font = Font(bold=True, name="Calibri")
 
     for i in range(5):
         current_row = row_number + i
@@ -45,41 +45,9 @@ def create_monthly_column_sheets(
             start_color="528EF6", end_color="528EF6", fill_type="solid"
         )  # Color azul pastel
         cell.font = Font(bold=True, name="Calibri")
-
-        cell_range = month_sheet[init_column:"I7"]  # Por ejemplo, del A1 al D5
+    
     # Aplicar el borde al rango de celdas seleccionado
+    cell_range = month_sheet[init_column:last_column]    
     for row in cell_range:
         for cell in row:
             cell.border = thin_border
-        # Aplicar el borde grueso a los lados exteriores del rango
-
-    for row_idx, row in enumerate(cell_range, 1):
-        for col_idx, cell in enumerate(row, 1):
-            if row_idx == 1:  # Borde superior
-                cell.border = Border(
-                    left=Side(style="thin"),
-                    right=Side(style="thin"),
-                    top=Side(style="thick"),
-                    bottom=Side(style="thin"),
-                )
-            if row_idx == len(cell_range):  # Borde inferior
-                cell.border = Border(
-                    left=Side(style="thin"),
-                    right=Side(style="thin"),
-                    top=Side(style="thin"),
-                    bottom=Side(style="thick"),
-                )
-            if col_idx == 1:  # Borde izquierdo
-                cell.border = Border(
-                    left=Side(style="thick"),
-                    right=Side(style="thin"),
-                    top=Side(style="thin"),
-                    bottom=Side(style="thin"),
-                )
-            if col_idx == len(row):  # Borde derecho
-                cell.border = Border(
-                    left=Side(style="thin"),
-                    right=Side(style="thick"),
-                    top=Side(style="thin"),
-                    bottom=Side(style="thin"),
-                )
