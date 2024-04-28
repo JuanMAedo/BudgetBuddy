@@ -1,3 +1,5 @@
+import datetime
+
 # Diccionary Number Month with Name Month to use it at Excel Sheets
 month_to_name = {
     1: "JAN",
@@ -23,3 +25,13 @@ day_to_name = {
     5: "Saturaday",
     6: "Sunday",
 }
+
+
+def year_from_excel_date(excel_date):
+    # Verifica si la fecha es un objeto datetime
+    if isinstance(excel_date, datetime.datetime):
+        # Retorna el año de la fecha
+        return excel_date.year
+    else:
+        # Si no es un objeto datetime, devuelve None o maneja el error según lo desees
+        return None
