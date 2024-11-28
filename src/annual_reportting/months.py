@@ -41,3 +41,8 @@ def create_monthly_column_sheets(
     for row in month_sheet[init_column:last_column]:
         for cell in row:
             cell.border = thin_border
+
+def fill_in_monthly(
+    #TODO
+):
+    #TODO
